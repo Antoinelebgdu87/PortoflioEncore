@@ -74,7 +74,6 @@ export default function Skills() {
       <div className="container mx-auto">
         {/* Section Header - iJerce style */}
         <div className="text-center mb-16 fade-in-up">
-          <Badge className="section-badge mb-6">Compétences</Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Spécialisé dans{" "}
             <span className="gradient-text">l'art du montage</span>
