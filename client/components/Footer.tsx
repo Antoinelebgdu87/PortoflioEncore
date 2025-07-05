@@ -1,4 +1,4 @@
-import { Heart, Code } from "lucide-react";
+import { Heart, Code, MessageCircle, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
