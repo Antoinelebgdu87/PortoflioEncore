@@ -56,14 +56,16 @@ export default function VideoShowcase() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 simple-fade">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mes <span className="text-primary-bright">Créations</span>
+        {/* Section Header - iJerce style */}
+        <div className="text-center mb-16 fade-in-up">
+          <Badge className="section-badge mb-6">Portfolio</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Mes <span className="gradient-text">Créations</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Découvrez mes meilleures vidéos, des shorts viraux aux montages
-            longs format
+            longs format. Chaque projet reflète ma passion pour l'art du montage
+            vidéo.
           </p>
         </div>
 

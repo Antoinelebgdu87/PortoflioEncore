@@ -1,45 +1,55 @@
 import { Button } from "@/components/ui/button";
-import { Play, ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Play, ExternalLink, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center simple-fade">
+    <section className="pt-32 pb-20 px-4 bg-background">
+      <div className="container mx-auto">
+        <div className="max-w-4xl mx-auto text-center fade-in-up">
+          {/* Badge */}
+          <Badge className="section-badge mb-6">
+            <Sparkles className="mr-1 h-3 w-3" />
+            Portfolio Créatif
+          </Badge>
+
           {/* Main title */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            <span className="text-primary-bright">NaCoSpy</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Passionné par{" "}
+            <span className="gradient-text">l'art du montage</span>
           </h1>
 
           {/* Subtitle */}
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+          <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium">
+            <span className="text-primary-bright font-bold">NaCoSpy</span> •
             Monteur - Première Pro
           </h2>
 
-          {/* Taglines with vibrant colors */}
-          <div className="space-y-3 mb-10">
-            <p className="text-xl md:text-2xl font-bold text-yellow">
-              TIKTOKS/SHORTS ENJOYER
-            </p>
-            <p className="text-xl md:text-2xl font-bold text-orange">
-              GOAT DES SHORTS
-            </p>
-            <p className="text-lg md:text-xl font-semibold text-blue">
-              ALL MY HOMIES LOVE SFXS
-            </p>
-          </div>
-
           {/* Description */}
-          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Monteur vidéo depuis 5 mois, spécialisé dans les shorts et TikToks
-            avec des effets visuels impressionnants.
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            Depuis 5 mois, je transforme les vidéos brutes en contenus
+            exceptionnels. Spécialisé dans les shorts et TikToks avec des effets
+            visuels impressionnants.
           </p>
+
+          {/* Skill tags with vibrant colors */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <Badge className="bg-blue/10 text-blue border-blue/20 px-3 py-1 font-medium">
+              TIKTOKS/SHORTS ENJOYER
+            </Badge>
+            <Badge className="bg-orange/10 text-orange border-orange/20 px-3 py-1 font-medium">
+              GOAT DES SHORTS
+            </Badge>
+            <Badge className="bg-purple/10 text-purple border-purple/20 px-3 py-1 font-medium">
+              ALL MY HOMIES LOVE SFXS
+            </Badge>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="bg-primary-bright hover:bg-primary text-primary-foreground font-semibold"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-xl px-8"
             >
               <Play className="mr-2 h-5 w-5" />
               Voir mes créations
@@ -48,31 +58,49 @@ export default function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold"
+              className="border-border text-foreground hover:bg-card font-semibold rounded-xl px-8"
             >
               <ExternalLink className="mr-2 h-5 w-5" />
               Mes réseaux
             </Button>
           </div>
+        </div>
 
-          {/* Stats with vibrant colors */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green">5+</div>
-              <div className="text-muted-foreground font-medium">
-                Mois d'expérience
+        {/* Stats card - iJerce style */}
+        <div className="max-w-2xl mx-auto">
+          <div className="content-card">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-green mb-1">
+                  5+
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  Mois d'expérience
+                </div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-pink">100+</div>
-              <div className="text-muted-foreground font-medium">
-                Vidéos créées
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-pink mb-1">
+                  100+
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  Vidéos créées
+                </div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red">∞</div>
-              <div className="text-muted-foreground font-medium">
-                Créativité
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-cyan mb-1">
+                  50K+
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  Vues générées
+                </div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-yellow mb-1">
+                  ∞
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  Créativité
+                </div>
               </div>
             </div>
           </div>
