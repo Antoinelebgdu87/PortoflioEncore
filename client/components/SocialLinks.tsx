@@ -83,35 +83,19 @@ export default function SocialLinks() {
                     {social.description}
                   </p>
 
-                  <Button
-                    size="sm"
-                    className={`bg-${colorClass}/10 text-${colorClass} hover:bg-${colorClass} hover:text-white border border-${colorClass}/20 rounded-lg font-medium transition-all duration-200`}
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center bg-${colorClass}/10 text-${colorClass} hover:bg-${colorClass} hover:text-white border border-${colorClass}/20 rounded-lg font-medium transition-all duration-200 h-9 px-3 text-sm gap-2`}
                   >
-                    <ExternalLink className="mr-2 h-4 w-4" />
+                    <ExternalLink className="h-4 w-4" />
                     Visiter
-                  </Button>
+                  </a>
                 </div>
               </Card>
             );
           })}
-        </div>
-
-        {/* CTA Section - iJerce style */}
-        <div className="text-center">
-          <div className="content-card max-w-2xl mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-4">Prêt à collaborer ?</h3>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Je suis toujours ouvert aux nouveaux projets et collaborations
-              créatives. Discutons de votre vision ensemble !
-            </p>
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-8 py-3 font-semibold"
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              Commencer un projet
-            </Button>
-          </div>
         </div>
       </div>
     </section>
