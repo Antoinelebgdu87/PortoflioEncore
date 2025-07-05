@@ -22,7 +22,7 @@ const socialLinks = [
     platform: "Instagram",
     username: "@nacospy",
     icon: Instagram,
-    url: "#",
+    url: "https://www.instagram.com/nacospy?igsh=NXN1ejc4ZnYxeDRm",
     color: "bg-pink",
     description: "Mes dernières créations",
   },
@@ -30,17 +30,9 @@ const socialLinks = [
     platform: "YouTube",
     username: "NaCoSpy",
     icon: Youtube,
-    url: "https://youtube.com/playlist?list=PLWEXW1UK9HZzoWtCY5TR6ibBUfP4nsWTw&si=wiu26SWg8POUxCeO",
+    url: "https://www.youtube.com/@nacospy50",
     color: "bg-red",
     description: "Toutes mes vidéos",
-  },
-  {
-    platform: "Contact",
-    username: "Collaboration",
-    icon: Mail,
-    url: "#",
-    color: "bg-green",
-    description: "Travaillons ensemble",
   },
 ];
 
@@ -50,7 +42,6 @@ export default function SocialLinks() {
       <div className="container mx-auto">
         {/* Section Header - iJerce style */}
         <div className="text-center mb-16 fade-in-up">
-          <Badge className="section-badge mb-6">Contact</Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Restons <span className="gradient-text">connectés</span>
           </h2>

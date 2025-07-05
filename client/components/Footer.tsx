@@ -8,7 +8,11 @@ export default function Footer() {
           {/* Brand section - iJerce style */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold text-foreground mb-4">
-              Editing By <span className="gradient-text">NaCoSpy</span>
+              Editing By{" "}
+              <span className="gradient-text">
+                BlackNetix
+                <br />
+              </span>
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
               Monteur vidéo professionnel spécialisé dans la création de
@@ -85,7 +89,7 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 NaCoSpy. "ALL MY HOMIES LOVE SFXS" - Monteur depuis 5 mois
+            © 2025 NaCoSpy. "ALL MY HOMIES LOVE SFXS" - Monteur depuis 5 mois
             et déjà une légende.
           </p>
         </div>
