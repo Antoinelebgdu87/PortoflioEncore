@@ -62,8 +62,8 @@ export default function Hero() {
 
         {/* Stats card - iJerce style */}
         <div className="max-w-2xl mx-auto">
-          <div className="content-card">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="content-card" style={{ marginLeft: "-5px" }}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-green mb-1">
                   5+
@@ -74,18 +74,10 @@ export default function Hero() {
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-pink mb-1">
-                  100+
+                  27+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Vidéos créées
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-cyan mb-1">
-                  50K+
-                </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  Vues générées
                 </div>
               </div>
               <div>
