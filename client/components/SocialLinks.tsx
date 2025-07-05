@@ -60,26 +60,30 @@ export default function SocialLinks() {
             return (
               <Card
                 key={social.platform}
-                className="content-card group hover:scale-[1.02] transition-all duration-200 cursor-pointer fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="content-card group hover:scale-[1.02] hover-lift hover-glow transition-all duration-500 cursor-pointer stagger-animation"
+                style={{ animationDelay: `${index * 0.2}s` }}
                 onClick={() => window.open(social.url, "_blank")}
               >
                 <div className="text-center">
                   <div className="flex justify-center mb-6">
                     <div
-                      className={`p-4 rounded-xl bg-${colorClass}/10 border border-${colorClass}/20 group-hover:scale-110 transition-transform duration-200`}
+                      className={`p-4 rounded-xl bg-${colorClass}/10 border border-${colorClass}/20 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 float-animation`}
                     >
-                      <social.icon className={`h-8 w-8 text-${colorClass}`} />
+                      <social.icon
+                        className={`h-8 w-8 text-${colorClass} transition-colors duration-300 group-hover:text-white`}
+                      />
                     </div>
                   </div>
 
-                  <h3 className="font-semibold text-lg mb-2">
+                  <h3 className="font-semibold text-lg mb-2 transition-colors duration-300 group-hover:text-primary">
                     {social.platform}
                   </h3>
-                  <p className={`text-${colorClass} font-bold mb-3`}>
+                  <p
+                    className={`text-${colorClass} font-bold mb-3 transition-all duration-300 group-hover:scale-105`}
+                  >
                     {social.username}
                   </p>
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed transition-colors duration-300 group-hover:text-foreground">
                     {social.description}
                   </p>
 
@@ -87,9 +91,9 @@ export default function SocialLinks() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center bg-${colorClass}/10 text-${colorClass} hover:bg-${colorClass} hover:text-white border border-${colorClass}/20 rounded-lg font-medium transition-all duration-200 h-9 px-3 text-sm gap-2`}
+                    className={`inline-flex items-center justify-center bg-${colorClass}/10 text-${colorClass} hover:bg-${colorClass} hover:text-white border border-${colorClass}/20 rounded-lg font-medium transition-all duration-300 h-9 px-3 text-sm gap-2 hover-grow pulse-glow`}
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
                     Visiter
                   </a>
                 </div>
