@@ -14,7 +14,7 @@ const socialLinks = [
     platform: "Discord",
     username: "nacospy",
     icon: MessageCircle,
-    url: "#",
+    url: "https://discord.com/invite/Kk3RV8V9",
     color: "bg-blue",
     description: "Rejoignez ma communauté",
   },
