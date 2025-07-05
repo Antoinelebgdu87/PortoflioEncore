@@ -71,64 +71,79 @@ export default function VideoShowcase() {
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {videos.map((video, index) => (
-            <Card
-              key={video.id}
-              className="video-card group cursor-pointer simple-fade"
-            >
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  {/* Thumbnail */}
-                  <div
-                    className={`${video.type === "short" ? "aspect-[9/16]" : "aspect-video"} ${video.type === "short" ? "bg-yellow/20" : "bg-blue/20"} flex items-center justify-center`}
-                  >
-                    <Play className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-200" />
-                  </div>
+          {videos.map((video, index) => {
+            const colors = [
+              "blue",
+              "green",
+              "red",
+              "yellow",
+              "orange",
+              "pink",
+              "purple",
+              "cyan",
+            ];
+            const colorClass = colors[index % colors.length];
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                    <Button
-                      size="sm"
-                      className="bg-primary-bright hover:bg-primary text-primary-foreground"
+            return (
+              <Card
+                key={video.id}
+                className="video-card group cursor-pointer fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden rounded-t-xl">
+                    {/* Thumbnail */}
+                    <div
+                      className={`${video.type === "short" ? "aspect-[9/16]" : "aspect-video"} bg-${colorClass}/10 border border-${colorClass}/20 flex items-center justify-center`}
                     >
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                      <div className={`p-4 rounded-full bg-${colorClass}/20`}>
+                        <Play
+                          className={`h-8 w-8 text-${colorClass} group-hover:scale-110 transition-transform duration-200`}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                      <Button
+                        size="sm"
+                        className={`bg-${colorClass} text-white hover:bg-${colorClass}/90 rounded-lg`}
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </div>
+
+                    {/* Type Badge */}
+                    <Badge
+                      className={`absolute top-3 left-3 bg-${colorClass}/90 text-white font-medium border-0`}
+                    >
+                      {video.type === "short" ? "Short" : "Long"}
+                    </Badge>
+
+                    {/* Duration */}
+                    <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded-md flex items-center gap-1 font-medium">
+                      <Clock className="h-3 w-3" />
+                      {video.duration}
+                    </div>
                   </div>
 
-                  {/* Type Badge */}
-                  <Badge
-                    className={`absolute top-2 left-2 font-semibold ${
-                      video.type === "short"
-                        ? "bg-yellow text-black"
-                        : "bg-blue text-white"
-                    }`}
-                  >
-                    {video.type === "short" ? "Short" : "Long"}
-                  </Badge>
-
-                  {/* Duration */}
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    {video.duration}
+                  {/* Video Info */}
+                  <div className="p-4">
+                    <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {video.title}
+                    </h3>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Eye className="h-4 w-4 mr-2" />
+                      <span className={`text-${colorClass} font-semibold`}>
+                        {video.views}
+                      </span>
+                      <span className="ml-1">vues</span>
+                    </div>
                   </div>
-                </div>
-
-                {/* Video Info */}
-                <div className="p-4">
-                  <h3 className="font-semibold text-sm mb-2 group-hover:text-primary-bright transition-colors">
-                    {video.title}
-                  </h3>
-                  <div className="flex items-center text-xs text-muted-foreground">
-                    <Eye className="h-3 w-3 mr-1" />
-                    <span className="text-green font-medium">
-                      {video.views}
-                    </span>{" "}
-                    vues
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* View All Button */}

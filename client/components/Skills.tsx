@@ -70,16 +70,19 @@ const achievements = [
 
 export default function Skills() {
   return (
-    <section className="py-20 px-4 bg-card">
+    <section className="py-20 px-4">
       <div className="container mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 simple-fade">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mes <span className="text-primary-bright">Compétences</span>
+        {/* Section Header - iJerce style */}
+        <div className="text-center mb-16 fade-in-up">
+          <Badge className="section-badge mb-6">Compétences</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Spécialisé dans{" "}
+            <span className="gradient-text">l'art du montage</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Spécialisé dans le montage vidéo moderne avec une passion pour les
-            effets visuels
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Chaque projet est unique et mérite une approche personnalisée. Avec
+            5 mois d'expérience intensive, je maîtrise les outils modernes du
+            montage vidéo.
           </p>
         </div>
 
@@ -87,51 +90,56 @@ export default function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {skills.map((skill, index) => {
             const colors = [
-              "bg-blue",
-              "bg-green",
-              "bg-red",
-              "bg-yellow",
-              "bg-orange",
-              "bg-pink",
+              "blue",
+              "green",
+              "red",
+              "yellow",
+              "orange",
+              "pink",
+              "purple",
+              "cyan",
             ];
             const colorClass = colors[index % colors.length];
 
             return (
               <Card
                 key={skill.title}
-                className="group hover:scale-105 transition-all duration-200 simple-fade"
+                className="content-card group hover:scale-[1.02] transition-all duration-200 fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div
-                      className={`p-3 rounded-lg ${colorClass}/20 mr-4 group-hover:scale-110 transition-transform duration-200`}
-                    >
-                      <skill.icon className="h-6 w-6 text-primary-bright" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">{skill.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {skill.description}
-                      </p>
-                    </div>
+                <div className="flex items-start space-x-4 mb-6">
+                  <div
+                    className={`p-3 rounded-xl bg-${colorClass}/10 border border-${colorClass}/20 group-hover:scale-110 transition-transform duration-200`}
+                  >
+                    <skill.icon className={`h-6 w-6 text-${colorClass}`} />
                   </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-1">
+                      {skill.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {skill.description}
+                    </p>
+                  </div>
+                </div>
 
-                  {/* Skill Level */}
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span>Niveau</span>
-                      <span className="text-primary-bright font-bold">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-3">
-                      <div
-                        className={`${colorClass} h-3 rounded-full transition-all duration-500 ease-out`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                {/* Skill Level */}
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium text-muted-foreground">
+                      Niveau de maîtrise
+                    </span>
+                    <span className={`text-lg font-bold text-${colorClass}`}>
+                      {skill.level}%
+                    </span>
                   </div>
-                </CardContent>
+                  <div className="w-full bg-border rounded-full h-2">
+                    <div
+                      className={`bg-${colorClass} h-2 rounded-full transition-all duration-1000 ease-out`}
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
               </Card>
             );
           })}
