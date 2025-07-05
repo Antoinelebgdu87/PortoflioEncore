@@ -57,15 +57,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        video: {
-          accent: "hsl(var(--video-accent))",
-          secondary: "hsl(var(--video-secondary))",
-        },
-        gradient: {
-          start: "hsl(var(--gradient-start))",
-          mid: "hsl(var(--gradient-mid))",
-          end: "hsl(var(--gradient-end))",
-        },
+        blue: "hsl(var(--blue))",
+        green: "hsl(var(--green))",
+        red: "hsl(var(--red))",
+        yellow: "hsl(var(--yellow))",
+        orange: "hsl(var(--orange))",
+        pink: "hsl(var(--pink))",
       },
       borderRadius: {
         lg: "var(--radius)",

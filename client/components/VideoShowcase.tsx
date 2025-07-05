@@ -57,9 +57,9 @@ export default function VideoShowcase() {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 fade-in">
+        <div className="text-center mb-16 simple-fade">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mes <span className="gradient-text">Créations</span>
+            Mes <span className="text-primary-bright">Créations</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Découvrez mes meilleures vidéos, des shorts viraux aux montages
@@ -72,23 +72,22 @@ export default function VideoShowcase() {
           {videos.map((video, index) => (
             <Card
               key={video.id}
-              className="video-card group cursor-pointer"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="video-card group cursor-pointer simple-fade"
             >
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   {/* Thumbnail */}
                   <div
-                    className={`${video.type === "short" ? "aspect-[9/16]" : "aspect-video"} bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center`}
+                    className={`${video.type === "short" ? "aspect-[9/16]" : "aspect-video"} ${video.type === "short" ? "bg-yellow/20" : "bg-blue/20"} flex items-center justify-center`}
                   >
-                    <Play className="h-12 w-12 text-white opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                    <Play className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-200" />
                   </div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
                     <Button
                       size="sm"
-                      className="bg-white/20 hover:bg-white/30 backdrop-blur-sm"
+                      className="bg-primary-bright hover:bg-primary text-primary-foreground"
                     >
                       <ExternalLink className="h-4 w-4" />
                     </Button>
@@ -96,10 +95,10 @@ export default function VideoShowcase() {
 
                   {/* Type Badge */}
                   <Badge
-                    className={`absolute top-2 left-2 ${
+                    className={`absolute top-2 left-2 font-semibold ${
                       video.type === "short"
-                        ? "bg-video-accent/90 hover:bg-video-accent"
-                        : "bg-video-secondary/90 hover:bg-video-secondary"
+                        ? "bg-yellow text-black"
+                        : "bg-blue text-white"
                     }`}
                   >
                     {video.type === "short" ? "Short" : "Long"}
@@ -114,12 +113,15 @@ export default function VideoShowcase() {
 
                 {/* Video Info */}
                 <div className="p-4">
-                  <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="font-semibold text-sm mb-2 group-hover:text-primary-bright transition-colors">
                     {video.title}
                   </h3>
                   <div className="flex items-center text-xs text-muted-foreground">
                     <Eye className="h-3 w-3 mr-1" />
-                    {video.views} vues
+                    <span className="text-green font-medium">
+                      {video.views}
+                    </span>{" "}
+                    vues
                   </div>
                 </div>
               </CardContent>
@@ -131,8 +133,7 @@ export default function VideoShowcase() {
         <div className="text-center">
           <Button
             size="lg"
-            variant="outline"
-            className="border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-all duration-300"
+            className="bg-accent-bright text-accent-foreground hover:bg-accent font-semibold"
             onClick={() =>
               window.open(
                 "https://youtube.com/playlist?list=PLWEXW1UK9HZzoWtCY5TR6ibBUfP4nsWTw&si=wiu26SWg8POUxCeO",
