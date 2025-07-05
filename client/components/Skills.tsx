@@ -70,12 +70,12 @@ const achievements = [
 
 export default function Skills() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-card">
+    <section className="py-20 px-4 bg-card">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 fade-in">
+        <div className="text-center mb-16 simple-fade">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mes <span className="gradient-text">Compétences</span>
+            Mes <span className="text-primary-bright">Compétences</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Spécialisé dans le montage vidéo moderne avec une passion pour les
@@ -85,72 +85,91 @@ export default function Skills() {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {skills.map((skill, index) => (
-            <Card
-              key={skill.title}
-              className="group hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 slide-in-left"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <skill.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">{skill.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {skill.description}
-                    </p>
-                  </div>
-                </div>
+          {skills.map((skill, index) => {
+            const colors = [
+              "bg-blue",
+              "bg-green",
+              "bg-red",
+              "bg-yellow",
+              "bg-orange",
+              "bg-pink",
+            ];
+            const colorClass = colors[index % colors.length];
 
-                {/* Skill Level */}
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span>Niveau</span>
-                    <span className="text-primary font-medium">
-                      {skill.level}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-2">
+            return (
+              <Card
+                key={skill.title}
+                className="group hover:scale-105 transition-all duration-200 simple-fade"
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
                     <div
-                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
+                      className={`p-3 rounded-lg ${colorClass}/20 mr-4 group-hover:scale-110 transition-transform duration-200`}
+                    >
+                      <skill.icon className="h-6 w-6 text-primary-bright" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">{skill.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {skill.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+
+                  {/* Skill Level */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>Niveau</span>
+                      <span className="text-primary-bright font-bold">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-muted rounded-full h-3">
+                      <div
+                        className={`${colorClass} h-3 rounded-full transition-all duration-500 ease-out`}
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* Achievements */}
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold mb-8 gradient-text">
+          <h3 className="text-2xl font-bold mb-8 text-primary-bright">
             Réalisations
           </h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {achievements.map((achievement, index) => (
-            <Card
-              key={achievement.title}
-              className="text-center group hover:scale-105 transition-all duration-300 slide-in-right"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <CardContent className="p-6">
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <achievement.icon className="h-8 w-8 text-primary" />
+          {achievements.map((achievement, index) => {
+            const colors = ["bg-green", "bg-yellow", "bg-orange"];
+            const colorClass = colors[index];
+
+            return (
+              <Card
+                key={achievement.title}
+                className="text-center group hover:scale-105 transition-all duration-200 simple-fade"
+              >
+                <CardContent className="p-6">
+                  <div className="flex justify-center mb-4">
+                    <div
+                      className={`p-4 rounded-full ${colorClass}/20 group-hover:scale-110 transition-transform duration-200`}
+                    >
+                      <achievement.icon className="h-8 w-8 text-primary-bright" />
+                    </div>
                   </div>
-                </div>
-                <h4 className="font-semibold mb-2">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">
-                  {achievement.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+                  <h4 className="font-semibold mb-2">{achievement.title}</h4>
+                  <p className="text-sm text-muted-foreground">
+                    {achievement.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
