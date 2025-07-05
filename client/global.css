@@ -214,34 +214,6 @@
     }
   }
 
-  .float-animation {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-
-  @keyframes pulseGlow {
-    0%,
-    100% {
-      box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
-    }
-  }
-
   .stagger-animation {
     opacity: 0;
     transform: translateY(20px);
@@ -255,30 +227,22 @@
     }
   }
 
-  /* Hover animations */
+  /* Hover animations - subtle and smooth */
   .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s ease-out;
   }
 
   .hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .hover-grow {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-out;
   }
 
   .hover-grow:hover {
-    transform: scale(1.05);
-  }
-
-  .hover-glow {
-    transition: all 0.3s ease-in-out;
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    transform: scale(1.02);
   }
 
   /* iJerce-style gradient text */

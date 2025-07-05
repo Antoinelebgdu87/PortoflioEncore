@@ -64,7 +64,7 @@ export default function VideoShowcase() {
             {videos.map((video, index) => (
               <Card
                 key={video.id}
-                className={`group cursor-pointer overflow-hidden border-2 transition-all duration-500 hover:border-primary hover:scale-105 hover-lift hover-glow bg-gradient-to-br stagger-animation ${
+                className={`group cursor-pointer overflow-hidden border-2 transition-all duration-300 hover:border-primary hover:scale-[1.02] hover-lift bg-gradient-to-br fade-in-up ${
                   video.type === "short"
                     ? "from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20"
                     : "from-green-500/10 to-yellow-500/10 hover:from-green-500/20 hover:to-yellow-500/20"
@@ -142,36 +142,36 @@ export default function VideoShowcase() {
                       <Button
                         size="icon"
                         variant="secondary"
-                        className="h-8 w-8 bg-black/70 hover:bg-black/90 transition-all duration-300 hover:scale-110"
+                        className="h-8 w-8 bg-black/70 hover:bg-black/90 transition-all duration-200"
                         onClick={(e) => {
                           e.stopPropagation();
                           openVideo(video.url);
                         }}
                       >
-                        <ExternalLink className="h-4 w-4 transition-transform duration-200 group-hover:rotate-12" />
+                        <ExternalLink className="h-4 w-4" />
                       </Button>
                     </div>
                     {/* Play overlay */}
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <Play className="w-16 h-16 text-white group-hover:scale-125 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Play className="w-16 h-16 text-white" />
                     </div>
                   </div>
 
                   {/* Video Info */}
-                  <div className="p-6 space-y-3 transition-all duration-300 group-hover:bg-muted/5">
-                    <h3 className="font-bold text-lg leading-tight line-clamp-2 transition-colors duration-300 group-hover:text-primary">
+                  <div className="p-6 space-y-3">
+                    <h3 className="font-bold text-lg leading-tight line-clamp-2">
                       {video.title}
                     </h3>
                     <div className="flex items-center justify-between text-sm text-muted-foreground">
                       {video.duration && (
-                        <div className="flex items-center transition-all duration-300 hover:text-foreground">
-                          <Clock className="w-4 h-4 mr-1 transition-transform duration-200 hover:rotate-12" />
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
                           {video.duration}
                         </div>
                       )}
                       {video.views && (
-                        <div className="flex items-center transition-all duration-300 hover:text-foreground">
-                          <Eye className="w-4 h-4 mr-1 transition-transform duration-200 hover:scale-110" />
+                        <div className="flex items-center">
+                          <Eye className="w-4 h-4 mr-1" />
                           {video.views}
                         </div>
                       )}
@@ -194,9 +194,9 @@ export default function VideoShowcase() {
                 )
               }
               size="lg"
-              className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-3 hover-lift hover-glow transition-all duration-500 pulse-glow group"
+              className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-3 hover-lift transition-all duration-200"
             >
-              <ExternalLink className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
+              <ExternalLink className="mr-2 h-5 w-5" />
               Voir toutes mes vidéos
             </Button>
           </div>

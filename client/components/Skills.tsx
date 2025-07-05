@@ -103,22 +103,20 @@ export default function Skills() {
             return (
               <Card
                 key={skill.title}
-                className="content-card group hover:scale-[1.02] hover-lift hover-glow transition-all duration-500 stagger-animation"
+                className="content-card group hover:scale-[1.02] hover-lift transition-all duration-200 fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start space-x-4 mb-6">
                   <div
-                    className={`p-3 rounded-xl bg-${colorClass}/10 border border-${colorClass}/20 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 float-animation`}
+                    className={`p-3 rounded-xl bg-${colorClass}/10 border border-${colorClass}/20 transition-all duration-200`}
                   >
-                    <skill.icon
-                      className={`h-6 w-6 text-${colorClass} transition-colors duration-300 group-hover:text-purple-400`}
-                    />
+                    <skill.icon className={`h-6 w-6 text-${colorClass}`} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg mb-1 transition-colors duration-300 group-hover:text-primary">
+                    <h3 className="font-semibold text-lg mb-1">
                       {skill.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-foreground">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {skill.description}
                     </p>
                   </div>
@@ -127,22 +125,18 @@ export default function Skills() {
                 {/* Skill Level */}
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-muted-foreground transition-colors duration-300 group-hover:text-primary">
+                    <span className="text-sm font-medium text-muted-foreground">
                       Niveau de maîtrise
                     </span>
-                    <span
-                      className={`text-lg font-bold text-${colorClass} transition-all duration-300 group-hover:scale-110`}
-                    >
+                    <span className={`text-lg font-bold text-${colorClass}`}>
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-border rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-border rounded-full h-2">
                     <div
-                      className={`bg-${colorClass} h-2 rounded-full transition-all duration-1000 ease-out group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 relative`}
+                      className={`bg-${colorClass} h-2 rounded-full transition-all duration-1000 ease-out`}
                       style={{ width: `${skill.level}%` }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-pulse"></div>
-                    </div>
+                    ></div>
                   </div>
                 </div>
               </Card>
