@@ -74,19 +74,58 @@ export default function VideoShowcase() {
                 <CardContent className="p-0">
                   {/* Thumbnail */}
                   <div className="relative overflow-hidden">
-                    <div
-                      className={`w-full ${
-                        video.type === "short"
-                          ? "aspect-[9/16]"
-                          : "aspect-video"
-                      } bg-gradient-to-br ${
-                        video.type === "short"
-                          ? "from-blue-600 to-purple-600"
-                          : "from-green-600 to-yellow-600"
-                      } flex items-center justify-center`}
-                    >
-                      <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
-                    </div>
+                    {video.thumbnail ? (
+                      <div className="relative">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className={`w-full ${
+                            video.type === "short"
+                              ? "aspect-[9/16]"
+                              : "aspect-video"
+                          } object-cover`}
+                          onError={(e) => {
+                            // Fallback to gradient if image fails to load
+                            e.currentTarget.style.display = "none";
+                            const fallback = e.currentTarget
+                              .nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = "flex";
+                          }}
+                        />
+                        <div
+                          className={`w-full ${
+                            video.type === "short"
+                              ? "aspect-[9/16]"
+                              : "aspect-video"
+                          } bg-gradient-to-br ${
+                            video.type === "short"
+                              ? "from-blue-600 to-purple-600"
+                              : "from-green-600 to-yellow-600"
+                          } flex items-center justify-center absolute inset-0`}
+                          style={{ display: "none" }}
+                        >
+                          <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        {/* Play overlay */}
+                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        className={`w-full ${
+                          video.type === "short"
+                            ? "aspect-[9/16]"
+                            : "aspect-video"
+                        } bg-gradient-to-br ${
+                          video.type === "short"
+                            ? "from-blue-600 to-purple-600"
+                            : "from-green-600 to-yellow-600"
+                        } flex items-center justify-center`}
+                      >
+                        <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                    )}
                     <div className="absolute top-4 left-4">
                       <Badge
                         className={

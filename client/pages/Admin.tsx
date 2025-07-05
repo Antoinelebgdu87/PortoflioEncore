@@ -61,6 +61,7 @@ export default function Admin() {
     title: "",
     url: "",
     type: "short" as "short" | "long",
+    thumbnail: "",
   });
 
   const [newSocialLink, setNewSocialLink] = useState({
@@ -145,9 +146,10 @@ export default function Admin() {
         title: newVideo.title.trim(),
         url: newVideo.url.trim(),
         type: newVideo.type,
+        thumbnail: newVideo.thumbnail.trim() || undefined,
       };
       setVideos([...videos, video]);
-      setNewVideo({ title: "", url: "", type: "short" });
+      setNewVideo({ title: "", url: "", type: "short", thumbnail: "" });
       toast({
         title: "Vidéo ajoutée",
         description: `"${video.title}" a été ajoutée à la liste.`,
@@ -322,6 +324,17 @@ export default function Admin() {
                       setNewVideo({ ...newVideo, url: e.target.value })
                     }
                     placeholder="https://youtube.com/watch?v=..."
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="video-thumbnail">Miniature (URL image)</Label>
+                  <Input
+                    id="video-thumbnail"
+                    value={newVideo.thumbnail}
+                    onChange={(e) =>
+                      setNewVideo({ ...newVideo, thumbnail: e.target.value })
+                    }
+                    placeholder="https://exemple.com/image.jpg"
                   />
                 </div>
                 <Button onClick={addVideo} className="w-full">
