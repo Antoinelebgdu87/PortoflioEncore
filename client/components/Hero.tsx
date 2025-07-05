@@ -7,12 +7,6 @@ export default function Hero() {
     <section className="pt-32 pb-20 px-4 bg-background">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto text-center fade-in-up">
-          {/* Badge */}
-          <Badge className="section-badge mb-6">
-            <Sparkles className="mr-1 h-3 w-3" />
-            Portfolio Créatif
-          </Badge>
-
           {/* Main title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Passionné par{" "}
@@ -22,7 +16,7 @@ export default function Hero() {
           {/* Subtitle */}
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium">
             <span className="text-primary-bright font-bold">NaCoSpy</span> •
-            Monteur - Première Pro
+            Monteur - Profesionel
           </h2>
 
           {/* Description */}
