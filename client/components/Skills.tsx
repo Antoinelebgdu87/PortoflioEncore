@@ -161,13 +161,11 @@ export default function Skills() {
                 key={achievement.title}
                 className="text-center group hover:scale-105 transition-all duration-200 simple-fade"
               >
-                <CardContent className="p-6">
+                <CardContent className={`p-6 ${index === 1 ? "mb-6" : ""}`}>
                   <div className="flex justify-center mb-4">
                     <div
                       className={`p-4 rounded-full ${colorClass}/20 group-hover:scale-110 transition-transform duration-200`}
-                    >
-                      <achievement.icon className="h-8 w-8 text-primary-bright" />
-                    </div>
+                    ></div>
                   </div>
                   <h4 className="font-semibold mb-2">{achievement.title}</h4>
                   <p className="text-sm text-muted-foreground">
