@@ -7,7 +7,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left side */}
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <h3 className="text-xl font-bold gradient-text mb-2">NaCoSpy</h3>
+            <h3 className="text-xl font-bold text-primary-bright mb-2">
+              NaCoSpy
+            </h3>
             <p className="text-sm text-muted-foreground">
               Monteur vidéo passionné • Créateur de contenu viral
             </p>
@@ -17,13 +19,13 @@ export default function Footer() {
           <div className="flex items-center space-x-6 mb-4 md:mb-0">
             <a
               href="#"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-blue transition-colors font-medium"
             >
               Discord
             </a>
             <a
               href="#"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-pink transition-colors font-medium"
             >
               Instagram
             </a>
@@ -31,7 +33,7 @@ export default function Footer() {
               href="https://youtube.com/playlist?list=PLWEXW1UK9HZzoWtCY5TR6ibBUfP4nsWTw&si=wiu26SWg8POUxCeO"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-red transition-colors font-medium"
             >
               YouTube
             </a>
@@ -40,9 +42,9 @@ export default function Footer() {
           {/* Right side */}
           <div className="flex items-center text-sm text-muted-foreground">
             <span>Made with</span>
-            <Heart className="h-4 w-4 mx-1 text-red-500 fill-current animate-pulse" />
+            <Heart className="h-4 w-4 mx-1 text-red fill-current animate-pulse" />
             <span>and</span>
-            <Code className="h-4 w-4 mx-1 text-primary" />
+            <Code className="h-4 w-4 mx-1 text-primary-bright" />
             <span>© 2024 NaCoSpy</span>
           </div>
         </div>

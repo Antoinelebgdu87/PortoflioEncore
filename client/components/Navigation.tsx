@@ -47,7 +47,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300"
+            className="text-2xl font-bold text-primary-bright hover:scale-105 transition-transform duration-200"
           >
             NaCoSpy
           </Link>
@@ -58,7 +58,7 @@ export default function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-105"
+                className="text-muted-foreground hover:text-primary-bright transition-colors duration-200 font-medium"
               >
                 {item.name}
               </button>
@@ -69,7 +69,7 @@ export default function Navigation() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-all duration-300"
+                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-200 font-medium"
               >
                 <Settings className="mr-2 h-4 w-4" />
                 Admin
