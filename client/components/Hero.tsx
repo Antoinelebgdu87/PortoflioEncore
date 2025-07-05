@@ -3,6 +3,16 @@ import { Badge } from "@/components/ui/badge";
 import { Play, ExternalLink, Sparkles } from "lucide-react";
 
 export default function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="pt-32 pb-20 px-4 bg-background">
       <div className="container mx-auto">
@@ -44,6 +54,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-xl px-8"
+              onClick={() => scrollToSection("#videos")}
             >
               <Play className="mr-2 h-5 w-5" />
               Voir mes créations
@@ -53,6 +64,7 @@ export default function Hero() {
               variant="outline"
               size="lg"
               className="border-border text-foreground hover:bg-card font-semibold rounded-xl px-8"
+              onClick={() => scrollToSection("#social")}
             >
               <ExternalLink className="mr-2 h-5 w-5" />
               Mes réseaux
